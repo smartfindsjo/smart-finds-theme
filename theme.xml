@@ -1,88 +1,95 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <b:template xmlns:b="http://www.google.com/2005/gml/b">
-  <b:head>
-    <b:include data='blog' name='all-head-content'/>
-    <b:skin><![CDATA[
-      body {
-        background: #f4f6f7;
-        font-family: 'Segoe UI', sans-serif;
-        color: #2d3436;
-        margin: 0;
-        padding: 0;
-      }
 
-      header {
-        background-color: #2c3e50;
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 2rem;
-      }
+  <!-- HEAD SECTION (Blogger required structure) -->
+  <html>
+    <head>
+      <b:include data='blog' name='all-head-content'/>
+      <b:skin><![CDATA[
+        body {
+          background: #f4f6f7;
+          font-family: 'Segoe UI', sans-serif;
+          color: #2d3436;
+          margin: 0;
+          padding: 0;
+        }
 
-      .logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-      }
+        header {
+          background-color: #2c3e50;
+          color: white;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 1rem 2rem;
+        }
 
-      nav a {
-        color: white;
-        margin: 0 0.5rem;
-        text-decoration: none;
-      }
+        .logo {
+          font-size: 1.5rem;
+          font-weight: bold;
+        }
 
-      .main-content {
-        display: flex;
-        margin: 2rem;
-      }
+        nav a {
+          color: white;
+          margin: 0 0.5rem;
+          text-decoration: none;
+        }
 
-      .sidebar {
-        width: 20%;
-        margin-right: 2rem;
-      }
+        .main-content {
+          display: flex;
+          margin: 2rem;
+        }
 
-      .posts {
-        width: 80%;
-      }
+        .sidebar {
+          width: 25%;
+          margin-right: 2rem;
+        }
 
-      footer {
-        background: #2c3e50;
-        color: white;
-        padding: 1rem;
-        text-align: center;
-      }
+        .posts {
+          width: 75%;
+        }
 
-      footer a {
-        color: #fff;
-        text-decoration: underline;
-        margin: 0 0.5rem;
-      }
-    ]]></b:skin>
-  </b:head>
+        footer {
+          background: #2c3e50;
+          color: white;
+          padding: 1rem;
+          text-align: center;
+        }
 
-  <b:body>
-    <header>
-      <div class="logo">Smart Finds</div>
-      <nav>
-        <a href="/p/about.html">About</a>
-        <a href="/p/contact.html">Contact</a>
-        <a href="/search">🔍</a>
-      </nav>
-    </header>
+        footer a {
+          color: #fff;
+          text-decoration: underline;
+          margin: 0 0.5rem;
+        }
+      ]]></b:skin>
+    </head>
 
-    <div class="main-content">
-      <aside class="sidebar">
-        <b:section id='sidebar' class='sidebar'/>
-      </aside>
-      <main class="posts">
-        <b:section id='main' class='main'/>
-      </main>
-    </div>
+    <!-- BODY SECTION -->
+    <body expr:class='data:blog.pageType'>
 
-    <footer>
-      <a href="/p/disclaimer.html">Disclaimer</a> |
-      <a href="/p/privacy-policy.html">Privacy Policy</a> |
-      <a href="/p/terms-of-use.html">Terms of Use</a>
-    </footer>
-  </b:body>
+      <header>
+        <div class="logo">Smart Finds</div>
+        <nav>
+          <a href="/p/about.html">About</a>
+          <a href="/p/contact.html">Contact</a>
+          <a href="/search">🔍</a>
+        </nav>
+      </header>
+
+      <div class="main-content">
+        <aside class="sidebar">
+          <b:section id='sidebar' class='sidebar'/>
+        </aside>
+        <main class="posts">
+          <b:section id='main' class='main'/>
+        </main>
+      </div>
+
+      <footer>
+        <a href="/p/disclaimer.html">Disclaimer</a> |
+        <a href="/p/privacy-policy.html">Privacy Policy</a> |
+        <a href="/p/terms-of-use.html">Terms of Use</a>
+      </footer>
+
+    </body>
+  </html>
 </b:template>
