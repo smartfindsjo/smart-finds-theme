@@ -60,7 +60,7 @@
     }
   ]]></b:skin>
 
-  <b:section id='header' class='header' showaddelement='no'>
+  <b:body>
     <header>
       <div class="logo">Smart Finds</div>
       <nav>
@@ -69,19 +69,21 @@
         <a href="/search">🔍</a>
       </nav>
     </header>
-  </b:section>
 
-  <div class="main-content">
-    <b:section id='sidebar' class='sidebar'/>
-    <b:section id='main' class='posts'/>
-  </div>
+    <div class="main-content">
+      <aside class="sidebar">
+        <b:section id='sidebar' class='sidebar'/>
+      </aside>
+      <main class="posts">
+        <b:section id='main' class='main'/>
+      </main>
+    </div>
 
-  <b:section id='footer' class='footer' showaddelement='no'>
     <footer>
       <a href="/p/disclaimer.html">Disclaimer</a> |
       <a href="/p/privacy-policy.html">Privacy Policy</a> |
       <a href="/p/terms-of-use.html">Terms of Use</a>
     </footer>
-  </b:section>
+  </b:body>
 
 </b:template>
