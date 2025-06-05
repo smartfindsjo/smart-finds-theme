@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <b:template xmlns:b="http://www.google.com/2005/gml/b">
-
-  <!-- HEAD SECTION (Blogger required structure) -->
   <html>
     <head>
       <b:include data='blog' name='all-head-content'/>
@@ -63,7 +61,6 @@
       ]]></b:skin>
     </head>
 
-    <!-- BODY SECTION -->
     <body expr:class='data:blog.pageType'>
 
       <header>
@@ -76,12 +73,12 @@
       </header>
 
       <div class="main-content">
-        <aside class="sidebar">
-          <b:section id='sidebar' class='sidebar'/>
-        </aside>
-        <main class="posts">
-          <b:section id='main' class='main'/>
-        </main>
+        <div class="sidebar">
+          <b:section id='sidebar' class='sidebar' showaddelement='yes'/>
+        </div>
+        <div class="posts">
+          <b:section id='main' class='main' showaddelement='yes'/>
+        </div>
       </div>
 
       <footer>
