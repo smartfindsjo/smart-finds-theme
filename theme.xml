@@ -1,87 +1,87 @@
-<!-- 
-Prompt:
-Create a simple Blogger theme using XML and HTML.
-- Header with logo on the left, page links on the right, and a search button
-- Center area for blog posts
-- Left side "pin ideas" section
-- Footer with disclaimer, privacy policy, terms of use
-- SEO-friendly, responsive layout
-- Clean design using Blogger widgets like <b:section> and <b:widget>
-- Soft color palette (blue-gray + white)
-- Use readable code with comments so I can learn
--->
-<b:template>
-  <b:template>
-  <html b:version='2' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b'>
-    <head>
-      <title><data:blog.pageTitle/></title>
-      <b:skin><![CDATA[
-        body {
-          background: #f4f6f7;
-          font-family: 'Segoe UI', sans-serif;
-          color: #2d3436;
-          margin: 0;
-        }
-        header {
-          background-color: #2c3e50;
-          color: white;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 1rem 2rem;
-        }
-        header .logo {
-          font-size: 1.5rem;
-          font-weight: bold;
-        }
-        nav a {
-          color: white;
-          margin: 0 0.5rem;
-          text-decoration: none;
-        }
-        .main-content {
-          display: flex;
-          margin: 2rem;
-        }
-        .sidebar {
-          width: 20%;
-          margin-right: 2rem;
-        }
-        .posts {
-          width: 80%;
-        }
-        footer {
-          background: #2c3e50;
-          color: white;
-          padding: 1rem;
-          text-align: center;
-        }
-      ]]></b:skin>
-    </head>
-    <body>
-      <header>
-        <div class="logo">Smart Finds</div>
-        <nav>
-          <a href="/p/about.html">About</a>
-          <a href="/p/contact.html">Contact</a>
-          <a href="/search">🔍</a>
-        </nav>
-      </header>
+<?xml version="1.0" encoding="UTF-8" ?>
+<b:template xmlns:b='http://www.google.com/2005/gml/b'>
 
-      <div class="main-content">
-        <div class="sidebar">
-          <b:section id='sidebar' class='sidebar' />
-        </div>
-        <div class="posts">
-          <b:section id='main' class='main' />
-        </div>
-      </div>
+  <b:include data='blog' name='all-head-content'/>
 
-      <footer>
-        <a href="/p/disclaimer.html">Disclaimer</a> | 
-        <a href="/p/privacy-policy.html">Privacy Policy</a> | 
-        <a href="/p/terms-of-use.html">Terms of Use</a>
-      </footer>
-    </body>
-  </html>
+  <b:skin><![CDATA[
+    body {
+      background: #f4f6f7;
+      font-family: 'Segoe UI', sans-serif;
+      color: #2d3436;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #2c3e50;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+
+    .main-content {
+      display: flex;
+      margin: 2rem;
+    }
+
+    .sidebar {
+      width: 20%;
+      margin-right: 2rem;
+    }
+
+    .posts {
+      width: 80%;
+    }
+
+    footer {
+      background: #2c3e50;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+      margin: 0 0.5rem;
+    }
+  ]]></b:skin>
+
+  <b:section id='header' class='header' showaddelement='no'>
+    <header>
+      <div class="logo">Smart Finds</div>
+      <nav>
+        <a href="/p/about.html">About</a>
+        <a href="/p/contact.html">Contact</a>
+        <a href="/search">🔍</a>
+      </nav>
+    </header>
+  </b:section>
+
+  <div class="main-content">
+    <b:section id='sidebar' class='sidebar'/>
+    <b:section id='main' class='posts'/>
+  </div>
+
+  <b:section id='footer' class='footer' showaddelement='no'>
+    <footer>
+      <a href="/p/disclaimer.html">Disclaimer</a> |
+      <a href="/p/privacy-policy.html">Privacy Policy</a> |
+      <a href="/p/terms-of-use.html">Terms of Use</a>
+    </footer>
+  </b:section>
+
 </b:template>
